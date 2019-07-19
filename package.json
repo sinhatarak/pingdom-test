@@ -1,5 +1,5 @@
 {
-  "name": "@adobe/helix-service",
+  "name": "@adobe/helix-pingdom-test",
   "version": "1.1.1",
   "description": "Example Package",
   "main": "src/index.js",
@@ -67,7 +67,7 @@
     }
   },
   "wsk": {
-    "name": "helix-services/service@1.1.1",
+    "name": "helix-services/pingdom-test@1.1.1",
     "static": []
   }
 }
