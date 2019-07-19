@@ -15,9 +15,22 @@
  * @param {string} name name of the person to greet
  * @returns {object} a greeting
  */
-function main({ name = 'world' } = {}) {
+function main(params) {
+  const dump = JSON.stringify(params);
   return {
-    body: `Hello, ${name}.`,
+    statusCode: (params && params.status) || 200,
+    headers: {
+      'Content-Type': 'application/xml',
+    },
+    body: [
+      '<pingdom_http_custom_check>',
+      '  <status>OK</status>',
+      '  <response_time>1</response_time>',
+      '  <params>',
+      `    ${dump}`,
+      '  </params>',
+      '</pingdom_http_custom_check>',
+    ].join('\n'),
   };
 }
 
